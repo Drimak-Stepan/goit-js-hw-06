@@ -1,13 +1,15 @@
-// Напиши скрипт, який під час набору тексту в інпуті input#name-input (подія input), підставляє його поточне значення в span#name-output. 
+// Напиши скрипт, який під час набору тексту в інпуті input#name-input (подія input), 
+//підставляє його поточне значення в span#name-output. 
 // Якщо інпут порожній, у спані повинен відображатися рядок "Anonymous".
 
 
-const nameInput = document.querySelector('#name-input');
-const nameOutput = document.querySelector('#name-output');
+const refs = {
+    input:document.querySelector('#name-input'),
+    output:document.querySelector('#name-output')};
 
-nameInput.addEventListener('input', event => {
-    nameOutput.textContent = event.currentTarget.value;
-    if (nameOutput.textContent === '') {
-    nameOutput.textContent = 'Anonymous';
+refs.input.addEventListener('input', event => {
+    refs.output.textContent = event.target.value;
+    if (refs.output.textContent === '') {
+    refs.output.textContent = 'Anonymous';
     }
 });
