@@ -20,8 +20,8 @@ let newList = [];
 
 ingredients.forEach(element => {
   const listElement = document.createElement('li');
-  listElement.textContent = element;
   listElement.classList.add('item');
+  listElement.textContent = element;
   newList.push(listElement);
 });
 
